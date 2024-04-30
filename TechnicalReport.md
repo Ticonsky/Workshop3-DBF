@@ -1,15 +1,19 @@
-# Reporte Técnico - Creación de la Base de Datos YouTubeDB
-En este informe se detalla la creación de la base de datos YouTubeDB, diseñada para almacenar información relacionada con videos, canales, playlists y usuarios, siguiendo los requisitos proporcionados.
+# YouTubeDB Database Creation Report
 
-## Estructura de la Base de Datos
-La base de datos YouTubeDB consta de las siguientes tablas:
+This report details the creation of the YouTubeDB database, designed to store information related to videos, channels, playlists, and users, following the provided requirements.
 
-- Video: Almacena información sobre los videos, incluyendo VideoID (clave primaria), Title, Views, Likes, Dislikes y ChannelID (clave foránea que referencia al canal).
-- Channel: Contiene información sobre los canales, como ChannelID (clave primaria), Name, Subscribers y Country.
-- Playlist: Guarda información sobre las listas de reproducción, con campos como PlaylistID (clave primaria), Name, Owner, Videos (una lista de VideoIDs separados por comas) y ChannelID (clave foránea que referencia al canal).
-- User: Almacena información sobre los usuarios, incluyendo UserID (clave primaria), Name, Alias y Password.
-## Cambios Realizados
-Se agregó una nueva tabla llamada Subscription para definir la relación entre los usuarios y los canales. Esta tabla se considera una entidad intermedia que sirve para romper las relaciones muchos a muchos entre usuarios y canales. La tabla Subscription contiene los siguientes campos:
+## Database Structure
 
-- UserID: Clave foránea que referencia al usuario.
-- ChannelID: Clave foránea que referencia al canal.
+The YouTubeDB database consists of the following tables:
+
+- **Video:** Stores information about the videos, including VideoID (primary key), Title, Views, Likes, Dislikes, and ChannelID (foreign key referencing the channel).
+- **Channel:** Contains information about the channels, such as ChannelID (primary key), Name, Subscribers, and Country.
+- **Playlist:** Stores information about playlists, with fields like PlaylistID (primary key), Name, Owner, Videos (a list of VideoIDs separated by commas), and ChannelID (foreign key referencing the channel).
+- **User:** Stores information about users, including UserID (primary key), Name, Alias, and Password.
+
+## Changes Made
+
+A new table called Subscription was added to define the relationship between users and channels. This table serves as an intermediate entity to break the many-to-many relationships between users and channels. The Subscription table contains the following fields:
+
+- **UserID:** Foreign key referencing the user.
+- **ChannelID:** Foreign key referencing the channel.
